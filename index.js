@@ -1,4 +1,4 @@
-// const port = 3000 || process.env.PORT
+const port =  process.env.PORT || 3000
 const nodemailer = require("nodemailer");
 const cors = require("cors");
 
@@ -18,10 +18,9 @@ app.use(cors())
 app.use(bodyParser.json());
 
 app.get('/', function (req, res) {
-  console.log("htmlData");
 //   var username = req.body.username;
 //   var htmlData = 'Hello:' + username;
-  res.send('htmlData');
+  res.send('Bruh');
 });
 
 
@@ -68,6 +67,6 @@ app.post('/sendMail', async function (req, res) {
   res.send("Mail envoyé avec succès." + req.body.mail);
 });
 
-app.listen(3000, ()=>{
+app.listen(port, ()=>{
   console.log('App listening');
 });
